@@ -37,7 +37,7 @@ public class DrawerManager : MonoBehaviour
     #region Button Callbacks
     public void OnResistorButtonClick()
     {
-        string resistorValue = resistorInputField.text;
+        string resistorValue = resistorInputField.text.Trim();
         if (resistorValue.Length == 1)
         {
             resistorValue = "0" + resistorValue; // Prepend a "0" if the value is a single digit
@@ -49,13 +49,22 @@ public class DrawerManager : MonoBehaviour
         else
         {
             Debug.Log("Resistor value: " + resistorValue);
+            try
+            {
+                GameObject resistorPrefab = Resources.Load<GameObject>($"Prefabs/Resistors/R{resistorValue}");
+                Instantiate(resistorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to load resistor prefab: " + e.Message);
+            }
         }
         resistorInputField.text = EmptyPlaceholder; // Reset the input field to "__"
     }
 
     public void OnCapacitorButtonClick()
     {
-        string capacitorValue = capacitorInputField.text;
+        string capacitorValue = capacitorInputField.text.Trim();
         if (capacitorValue.Length == 1)
         {
             capacitorValue = "0" + capacitorValue; // Prepend a "0" if the value is a single digit
@@ -67,13 +76,22 @@ public class DrawerManager : MonoBehaviour
         else
         {
             Debug.Log("Capacitor value: " + capacitorValue);
+            try
+            {
+                GameObject capacitorPrefab = Resources.Load<GameObject>($"Prefabs/Capacitors/C{capacitorValue}");
+                Instantiate(capacitorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to load capacitor prefab: " + e.Message);
+            }
         }
         capacitorInputField.text = EmptyPlaceholder; // Reset the input field to "__"
     }
 
     public void OnTransformerButtonClick()
     {
-        string transformerValue = transformerInputField.text;
+        string transformerValue = transformerInputField.text.Trim();
         if (transformerValue.Length == 1)
         {
             transformerValue = "0" + transformerValue; // Prepend a "0" if the value is a single digit
@@ -85,13 +103,22 @@ public class DrawerManager : MonoBehaviour
         else
         {
             Debug.Log("Transformer value: " + transformerValue);
+            try
+            {
+                GameObject transformerPrefab = Resources.Load<GameObject>($"Prefabs/Transformers/XFRM{transformerValue}");
+                Instantiate(transformerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to load transformer prefab: " + e.Message);
+            }
         }
         transformerInputField.text = EmptyPlaceholder; // Reset the input field to "__"
     }
 
     public void OnIntegratedCircuitButtonClick()
     {
-        string integratedCircuitValue = integratedCircuitInputField.text;
+        string integratedCircuitValue = integratedCircuitInputField.text.Trim();
         if (integratedCircuitValue.Length == 1)
         {
             integratedCircuitValue = "0" + integratedCircuitValue; // Prepend a "0" if the value is a single digit
@@ -103,6 +130,15 @@ public class DrawerManager : MonoBehaviour
         else
         {
             Debug.Log("Integrated Circuit value: " + integratedCircuitValue);
+            try
+            {
+                GameObject integratedCircuitPrefab = Resources.Load<GameObject>($"Prefabs/IntegratedCircuits/IC{integratedCircuitValue}");
+                Instantiate(integratedCircuitPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to load integrated circuit prefab: " + e.Message);
+            }
         }
         integratedCircuitInputField.text = EmptyPlaceholder; // Reset the input field to "__"
     }
