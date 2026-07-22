@@ -37,6 +37,29 @@ public class ToolboxManager : MonoBehaviour
             if (button == selectedButton) continue;
             button.GetComponent<Outline>().enabled = false;
         }
+
+        //Set the current tool in ToolManager based on the clicked button
+        switch (selectedButton.name)
+        {
+            case "HandButton":
+                ToolManager.Instance.SetCurrentTool(CurrentTool.Hand);
+                break;
+            case "SolderingButton":
+                ToolManager.Instance.SetCurrentTool(CurrentTool.SolderingIron);
+                break;
+            case "PliersButton":
+                ToolManager.Instance.SetCurrentTool(CurrentTool.Pliers);
+                break;
+            case "MagnifyingButton":
+                ToolManager.Instance.SetCurrentTool(CurrentTool.MagnifyingGlass);
+                break;
+            case "DirectionalButton":
+                ToolManager.Instance.SetCurrentTool(CurrentTool.DirectionalInstrument);
+                break;
+            default:
+                Debug.LogWarning("Unknown button clicked.");
+                break;
+        }
     }
     #endregion
 }
