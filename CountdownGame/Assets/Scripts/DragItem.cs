@@ -5,6 +5,13 @@ public class DragItem : MonoBehaviour
     private bool dragging = false;
     [SerializeField] private bool canBeDragged = true;
     private Vector3 offset;
+    [SerializeField] private ComponentDestination componentDestination;
+    [SerializeField] private ComponentScript componentScript;
+
+    void Start()
+    {
+        componentScript = GetComponent<ComponentScript>();
+    }
 
     void Update()
     {
@@ -31,12 +38,28 @@ public class DragItem : MonoBehaviour
         ToolManager.Instance.SetDraggedItem(null);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Destination"))
+        {
+            componentDestination = other.GetComponent<ComponentDestination>();
+            if (componentDestination.componentName != componentScript.componentName)
+            {
+                componentDestination = null;
+            }
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Solder"))
         {
             canBeDragged = false;
-            Debug.Log($"{gameObject.name} has been soldered in place.");
+            // Debug.Log($"{gameObject.name} has been soldered in place.");
+            // if (componentDestination != null)
+            // {
+            //     componentDestination.SetComponentPlaced(true);
+            // }
         }
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2472311232488021284}
   m_Layer: 0
   m_Name: BasicComponent
-  m_TagString: Untagged
+  m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   canBeDragged: 1
+  componentDestination: {fileID: 0}
+  componentScript: {fileID: 0}
 --- !u!114 &2472311232488021284
 MonoBehaviour:
   m_ObjectHideFlags: 0
