@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 public class ToolboxManager : MonoBehaviour
 {
     [SerializeField] private List<Button> toolboxButtons;
@@ -21,6 +22,21 @@ public class ToolboxManager : MonoBehaviour
 
         OnToolboxButtonClick(toolboxButtons[0]); //Set default selected button
     }
+    #endregion
+
+    #region Hotkey Handling
+
+    public void HandleToolboxHotkey(int toolIndex)
+    {
+        if (toolIndex < 0 || toolIndex >= toolboxButtons.Count)
+        {
+            Debug.LogWarning($"Tool index {toolIndex} is out of range.");
+            return;
+        }
+
+        OnToolboxButtonClick(toolboxButtons[toolIndex]);
+    }
+
     #endregion
 
     #region Button Callbacks

@@ -46,13 +46,21 @@ public class ToolManager : MonoBehaviour
     void OnDisable()
     {
         inputActions.Disable();
-        // UnsubscribeInputs();
+        UnsubscribeInputs();
     }
 
     void SubscribeInputs()
     {
         inputActions.Player.LeftClick.performed += HandleLeftClick;
         inputActions.Player.RightClick.performed += HandleRightClick;
+        inputActions.Player.ToolHotkey.performed += HandleToolHotkey;
+    }
+
+    void UnsubscribeInputs()
+    {
+        inputActions.Player.LeftClick.performed -= HandleLeftClick;
+        inputActions.Player.RightClick.performed -= HandleRightClick;
+        inputActions.Player.ToolHotkey.performed -= HandleToolHotkey;
     }
 
     #endregion
@@ -94,6 +102,14 @@ public class ToolManager : MonoBehaviour
             default:
                 Debug.LogWarning("Unhandled tool click.");
                 break;
+        }
+    }
+
+    private void HandleToolHotkey(InputAction.CallbackContext context)
+    {
+        if (int.TryParse(context.control.name, out int key))
+        {
+            toolboxManager.HandleToolboxHotkey(key - 1);
         }
     }
 
