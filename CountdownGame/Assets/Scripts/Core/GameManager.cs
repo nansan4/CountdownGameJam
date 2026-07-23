@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
         if (GameState.Instance.GetGameStatus() == GameStatus.Initializing)
         {
-            LeftBoxManager.Instance.SetTotalTime(dayDurationsSeconds[currentDay - 1]);
+            // LeftBoxManager.Instance.SetTotalTime(dayDurationsSeconds[currentDay - 1]);
             GameState.Instance.ChangeGameStatus(GameStatus.Playing);
         }
         else Debug.LogError("Game State is not in Initializing state at the start of the game.");
