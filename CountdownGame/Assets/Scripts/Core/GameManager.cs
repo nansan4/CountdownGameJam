@@ -28,12 +28,25 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        GameState.Instance.GameOverEvent.AddListener(GameEnd);
+        GameState.Instance.VictoryEvent.AddListener(GameWin);
+
         if (GameState.Instance.GetGameStatus() == GameStatus.Initializing)
         {
             LeftBoxManager.Instance.SetTotalTime(dayDurationsSeconds[currentDay - 1]);
             GameState.Instance.ChangeGameStatus(GameStatus.Playing);
         }
         else Debug.LogError("Game State is not in Initializing state at the start of the game.");
+    }
+
+    private void GameEnd()
+    {
+        currentDay++;
+    }
+
+    private void GameWin()
+    {
+        currentDay++;
     }
 
     #endregion

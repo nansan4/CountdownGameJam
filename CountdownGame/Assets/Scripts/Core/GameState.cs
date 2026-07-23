@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum GameStatus
 {
@@ -13,6 +14,9 @@ public enum GameStatus
 public class GameState : MonoBehaviour
 {
     [SerializeField] private GameStatus currentGameStatus = GameStatus.Initializing;
+    public UnityEvent VictoryEvent;
+    public UnityEvent GameOverEvent;
+    public UnityEvent PauseEvent;
 
     #region Singleton
     public static GameState Instance { get; private set; }
@@ -56,6 +60,7 @@ public class GameState : MonoBehaviour
             case GameStatus.Paused:
                 // Handle paused logic
                 currentGameStatus = newStatus;
+                PauseEvent?.Invoke();
                 break;
             case GameStatus.Tutorial:
                 // Handle tutorial logic
@@ -64,10 +69,12 @@ public class GameState : MonoBehaviour
             case GameStatus.GameOver:
                 // Handle game over logic
                 currentGameStatus = newStatus;
+                GameOverEvent?.Invoke();
                 break;
             case GameStatus.Victory:
                 // Handle victory logic
                 currentGameStatus = newStatus;
+                VictoryEvent?.Invoke();
                 break;
             default:
                 Debug.LogWarning("Unhandled game status: " + newStatus);
