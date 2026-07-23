@@ -43,12 +43,12 @@ public class LeftBoxManager : MonoBehaviour
 
     private void UpdateClockText()
     {
-        int totalSeconds = Mathf.Max(0, Mathf.FloorToInt(remainingGameTime));
-        int hours = totalSeconds / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
+        int totalMilliseconds = Mathf.Max(0, Mathf.FloorToInt(remainingGameTime * 1000f));
+        int minutes = totalMilliseconds / 60000;
+        int seconds = totalMilliseconds % 60000 / 1000;
+        int milliseconds = totalMilliseconds % 1000;
 
-        clockText.text = $"{hours:00}:{minutes:00}:{seconds:00}";
+        clockText.text = $"{minutes:00}:{seconds:00}:{milliseconds:00}";
     }
 
     #endregion

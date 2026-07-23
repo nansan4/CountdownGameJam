@@ -19,7 +19,7 @@ public class CircuitBoardManager : MonoBehaviour
                 return;
             }
         }
-        Debug.Log("Win!");
+        // Debug.Log("Win!");
         GameState.Instance.ChangeGameStatus(GameStatus.Victory);
     }
 }

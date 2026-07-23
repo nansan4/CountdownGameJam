@@ -51,9 +51,11 @@ MonoBehaviour:
   - 480
   - 480
   - 480
+  circuitBoards:
+  - {fileID: 8175539213973439869, guid: 284a7d8037a354d8aab90cee8f2690d2, type: 3}
+  boardSpawnPos: {fileID: 0}
   dayDifficultyMultipliers:
   - 1
-  - 1.2
   - 1.2
   - 1.5
   - 1.7

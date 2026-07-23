@@ -70,11 +70,13 @@ public class GameState : MonoBehaviour
                 // Handle game over logic
                 currentGameStatus = newStatus;
                 GameOverEvent?.Invoke();
+                Debug.Log("Day lost!");
                 break;
             case GameStatus.Victory:
                 // Handle victory logic
                 currentGameStatus = newStatus;
                 VictoryEvent?.Invoke();
+                Debug.Log("Day won!");
                 break;
             default:
                 Debug.LogWarning("Unhandled game status: " + newStatus);
