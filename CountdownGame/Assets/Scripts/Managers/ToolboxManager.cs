@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 public class ToolboxManager : MonoBehaviour
 {
-    [SerializeField] private List<Button> toolboxButtons;
+    public List<Button> toolboxButtons { get; private set; }
     [SerializeField] private Button selectedButton;
 
     #region Singleton
