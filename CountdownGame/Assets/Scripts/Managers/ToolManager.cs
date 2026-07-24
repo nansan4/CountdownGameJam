@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections.Generic;
 public enum CurrentTool
 {
     Hand,
@@ -16,7 +17,12 @@ public class ToolManager : MonoBehaviour
     [SerializeField] private DragItem draggedItem;
     [SerializeField] private GameObject solderPrefab;
     private InputSystem_Actions inputActions;
+
+    [Header("Audio Variables")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> solderSpawnSounds;
     private ToolboxManager toolboxManager;
+    
 
     #region Singleton
     public static ToolManager Instance { get; private set; }
@@ -169,6 +175,7 @@ public class ToolManager : MonoBehaviour
         // Logic to spawn solder at the given position
         Instantiate(solderPrefab, position, Quaternion.identity);
         Debug.Log($"Spawning solder at: {position}");
+        audioSource.PlayOneShot(solderSpawnSounds[UnityEngine.Random.Range(0, solderSpawnSounds.Count)]);
     }
 
     private void TryDestroySolder()

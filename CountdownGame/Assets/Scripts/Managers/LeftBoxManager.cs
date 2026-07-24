@@ -6,6 +6,10 @@ public class LeftBoxManager : MonoBehaviour
 {
    [SerializeField] private TMP_Text clockText;
    [SerializeField] private TMP_Text dialogueText;
+   [SerializeField] private AudioSource clockTickingAudioSource;
+   [SerializeField] private AudioClip minuteTickSound;
+   [SerializeField] private AudioClip countdownTickSound;
+   private int lastCountdownSecond = -1;
    [SerializeField] private float totalGameTime;
    [SerializeField] private float remainingGameTime;
 
@@ -47,6 +51,22 @@ public class LeftBoxManager : MonoBehaviour
         int minutes = totalMilliseconds / 60000;
         int seconds = totalMilliseconds % 60000 / 1000;
         int milliseconds = totalMilliseconds % 1000;
+
+        if (seconds == 0)
+        {
+            clockTickingAudioSource.PlayOneShot(minuteTickSound);
+        }
+
+        // Play a tick once per second during the final 30 seconds
+        int wholeSecondsRemaining = Mathf.CeilToInt(remainingGameTime);
+
+        if (wholeSecondsRemaining <= 30 &&
+            wholeSecondsRemaining > 0 &&
+            wholeSecondsRemaining != lastCountdownSecond)
+        {
+            clockTickingAudioSource.PlayOneShot(countdownTickSound);
+            lastCountdownSecond = wholeSecondsRemaining;
+        }
 
         clockText.text = $"{minutes:00}:{seconds:00}:{milliseconds:00}";
     }

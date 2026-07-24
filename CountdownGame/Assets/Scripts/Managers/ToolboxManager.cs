@@ -6,6 +6,8 @@ public class ToolboxManager : MonoBehaviour
 {
     public List<Button> toolboxButtons { get; private set; }
     [SerializeField] private Button selectedButton;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip buttonClickSound;
 
     #region Singleton
     public static ToolboxManager Instance { get; private set; }
@@ -46,6 +48,7 @@ public class ToolboxManager : MonoBehaviour
 
         selectedButton = clickedButton;
         selectedButton.GetComponent<Outline>().enabled = true;
+        audioSource.PlayOneShot(buttonClickSound);
         Debug.Log($"Selected tool: {selectedButton.name}");
 
         foreach (Button button in toolboxButtons) //Make sure no other buttons are outlined
