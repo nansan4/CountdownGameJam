@@ -168,6 +168,7 @@ public class ToolManager : MonoBehaviour
     }
 
     #endregion
+
     #region Soldering Iron Tool
 
     private void SpawnSolder(Vector3 position)
@@ -198,13 +199,34 @@ public class ToolManager : MonoBehaviour
     }
 
     #endregion
+
     #region Pliers Tool
 
     #endregion
+
     #region Magnifying Glass Tool
 
     #endregion
+
     #region Directional Instrument Tool
+
+    /// <summary>
+    /// Checks the distance between the transform position of the input DragItem and the transform position of DragItem.Destination
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns> a Vector3, the X and Y components are the normalised Vector2 distance, and the Z component is the distance. Vector3.negativeInfinity is used as the nullcase</returns>
+    public Vector3 CheckDistance(DragItem item)
+    {
+        if (item == null) { return Vector3.negativeInfinity; }//nullcase 
+        else
+        {
+            Vector2 vec = item.Destination.transform.position - item.transform.position;
+            float distance = vec.magnitude;
+            vec.Normalize();
+
+            return new Vector3(vec.x, vec.y, distance);
+        }
+    }
 
     #endregion
 }
