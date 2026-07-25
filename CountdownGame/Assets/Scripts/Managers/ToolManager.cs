@@ -215,12 +215,12 @@ public class ToolManager : MonoBehaviour
     /// </summary>
     /// <param name="item"></param>
     /// <returns> a Vector3, the X and Y components are the normalised Vector2 distance, and the Z component is the distance. Vector3.negativeInfinity is used as the nullcase</returns>
-    public Vector3 CheckDistance(DragItem item)
+    public Vector3 CheckDistance()
     {
-        if (item == null) { return Vector3.negativeInfinity; }//nullcase 
+        if (draggedItem == null) { return Vector3.negativeInfinity; }//nullcase 
         else
         {
-            Vector2 vec = item.Destination.transform.position - item.transform.position;
+            Vector2 vec = draggedItem.Destination.transform.position - draggedItem.transform.position;
             float distance = vec.magnitude;
             vec.Normalize();
 

@@ -20,7 +20,7 @@ public class DragItem : MonoBehaviour
         if (dragging)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-            ToolManager.Instance.CheckDistance(this);
+            ToolManager.Instance.CheckDistance();
 
         }
     }
@@ -34,7 +34,7 @@ public class DragItem : MonoBehaviour
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
         ToolManager.Instance.SetDraggedItem(this);
-        ToolManager.Instance.CheckDistance(this);
+        ToolManager.Instance.CheckDistance();
     }
 
     private void OnMouseUp()
@@ -42,7 +42,7 @@ public class DragItem : MonoBehaviour
         dragging = false;
         ToolManager.Instance.SetDraggedItem(null);
 
-        ToolManager.Instance.CheckDistance(this); //guarantee null case is hit to display status of 'no item to check'
+        ToolManager.Instance.CheckDistance(); //guarantee null case is hit to display status of 'no item to check'
     }
 
     void OnTriggerEnter2D(Collider2D other)
