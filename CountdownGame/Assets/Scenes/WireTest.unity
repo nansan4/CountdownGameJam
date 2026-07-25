@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicComponent
       objectReference: {fileID: 0}
+    - target: {fileID: 3288666942723118936, guid: 904d5fd16dea54557a18a0cad6351808, type: 3}
+      propertyPath: bendStrength
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3376043311865766524, guid: 904d5fd16dea54557a18a0cad6351808, type: 3}
       propertyPath: m_MotionVectors
       value: 1
