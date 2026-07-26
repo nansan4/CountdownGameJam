@@ -101,6 +101,7 @@ public class BossManager : MonoBehaviour
             bossAudioSource.clip = clipSO.clip;
             bossAudioSource.Play();
             Debug.Log($"Playing Boss Clip: {clipSO.text}");
+            LeftBoxManager.Instance.ShowText(clipSO.text, clipSO.duration);
         }
         else
         {

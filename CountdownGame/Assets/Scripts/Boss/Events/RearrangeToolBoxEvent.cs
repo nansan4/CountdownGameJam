@@ -1,4 +1,5 @@
 using UnityEngine;
+[CreateAssetMenu(fileName = "Tool Box Event", menuName = "Boss Event", order = 2)]
 
 public class RearrangeToolBoxEvent : BossEventSO
 {

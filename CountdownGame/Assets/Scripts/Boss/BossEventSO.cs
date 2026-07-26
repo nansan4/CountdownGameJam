@@ -1,6 +1,6 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Boss Event", menuName = "Boss Event", order = 2)]
 public abstract class BossEventSO : ScriptableObject
 {
+    [SerializeField] private string eventName;
     public abstract void Execute(BossManager bossManager);
 }
