@@ -68,7 +68,7 @@ public class LeftBoxManager : MonoBehaviour
             lastCountdownSecond = wholeSecondsRemaining;
         }
 
-        clockText.text = $"{minutes:00}:{seconds:00}:{milliseconds:00}";
+        clockText.text = $"{minutes:00}:{seconds:00}";
     }
 
     #endregion
