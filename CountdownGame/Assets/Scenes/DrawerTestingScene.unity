@@ -6499,6 +6499,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a6c5bda89cd0942a287f0b6e4fddafea, type: 3}
   - {fileID: 8300000, guid: 0afa47c6030d449b0acdf1f2bb0f8987, type: 3}
   - {fileID: 8300000, guid: a9668b20bcaf24edcb5108548bd5de87, type: 3}
+  dragSounds:
+  - {fileID: 8300000, guid: 845a3f1b64ea1477b85726407ec80c44, type: 3}
+  - {fileID: 8300000, guid: 166d859781b0d4a09af51bb55a18bada, type: 3}
+  - {fileID: 8300000, guid: db811384866b142b39d8f6a28b924ee4, type: 3}
+  - {fileID: 8300000, guid: 8a9f1cf4e5d644308ad7806eb42a0268, type: 3}
+  - {fileID: 8300000, guid: f324eeddc626c4c2cb39a0e6d4ea87d6, type: 3}
+  - {fileID: 8300000, guid: 84828cee31d214cd9875f392e704224c, type: 3}
 --- !u!4 &2113339157
 Transform:
   m_ObjectHideFlags: 0
