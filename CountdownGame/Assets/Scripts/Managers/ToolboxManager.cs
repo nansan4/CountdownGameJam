@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 public class ToolboxManager : MonoBehaviour
 {
-    public List<Button> toolboxButtons { get; private set; }
+    public List<Button> toolboxButtons;
     [SerializeField] private Button selectedButton;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip buttonClickSound;
@@ -22,7 +22,7 @@ public class ToolboxManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        OnToolboxButtonClick(toolboxButtons[0]); //Set default selected button
+        OnToolboxButtonClick(toolboxButtons[1]); //Set default selected button
     }
     #endregion
 

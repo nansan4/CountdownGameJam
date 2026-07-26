@@ -6585,6 +6585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9308fca8711445585f078baae3dbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  toolboxButtons:
+  - {fileID: 770618528}
+  - {fileID: 121575360}
+  - {fileID: 699952803}
+  - {fileID: 1239521157}
+  - {fileID: 279967500}
   selectedButton: {fileID: 0}
   audioSource: {fileID: 2120912928}
   buttonClickSound: {fileID: 8300000, guid: 2d38e048d8b7448719477cda4f6867c1, type: 3}

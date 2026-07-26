@@ -21,6 +21,7 @@ public class ToolManager : MonoBehaviour
     [Header("Audio Variables")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private List<AudioClip> solderSpawnSounds;
+    [SerializeField] private List<AudioClip> dragSounds;
     private ToolboxManager toolboxManager;
     
 
@@ -163,6 +164,8 @@ public class ToolManager : MonoBehaviour
 
         draggedItem = item;
 
+        audioSource.PlayOneShot(dragSounds[UnityEngine.Random.Range(0, dragSounds.Count)]);
+
         if (item != null) Debug.Log($"Dragging item: {item.name}");
         else Debug.Log("Stopped dragging.");
     }
@@ -217,7 +220,7 @@ public class ToolManager : MonoBehaviour
     /// <returns> a Vector3, the X and Y components are the normalised Vector2 distance, and the Z component is the distance. Vector3.negativeInfinity is used as the nullcase</returns>
     public Vector3 CheckDistance()
     {
-        if (draggedItem == null) { return Vector3.negativeInfinity; }//nullcase 
+        if (draggedItem == null || draggedItem.Destination == null) { return Vector3.negativeInfinity; }//nullcase 
         else
         {
             Vector2 vec = draggedItem.Destination.transform.position - draggedItem.transform.position;
