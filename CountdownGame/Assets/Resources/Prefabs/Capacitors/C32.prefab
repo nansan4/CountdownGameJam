@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5869981725460425627}
   - component: {fileID: 2472311232488021284}
   m_Layer: 0
-  m_Name: R22
+  m_Name: C32
   m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: e4c681614bc92bd4b8a2709eec6e8ba3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d6819c5aa976cc942b59d4ca2afcd197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,5 +167,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313c904db2e754100a8cc7e0c5c94d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  componentType: 1
-  componentName: R22
+  componentType: 2
+  componentName: C32

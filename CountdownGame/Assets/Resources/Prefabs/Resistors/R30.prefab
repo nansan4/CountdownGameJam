@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5869981725460425627}
   - component: {fileID: 2472311232488021284}
   m_Layer: 0
-  m_Name: R22
+  m_Name: R30
   m_TagString: Component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   componentType: 1
-  componentName: R22
+  componentName: R30
