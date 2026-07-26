@@ -7,6 +7,7 @@ public class DrawerManager : MonoBehaviour
     private const string EmptyPlaceholder = "__";
 
     #region Variables
+    [SerializeField] private Transform componentSpawnPos;
     [Header("Buttons")]
     [SerializeField] private Button resistorButton;
     [SerializeField] private Button capacitorButton;
@@ -52,7 +53,7 @@ public class DrawerManager : MonoBehaviour
             try
             {
                 GameObject resistorPrefab = Resources.Load<GameObject>($"Prefabs/Resistors/R{resistorValue}");
-                Instantiate(resistorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(resistorPrefab, componentSpawnPos.position, Quaternion.identity);
             }
             catch (System.Exception e)
             {
@@ -79,7 +80,7 @@ public class DrawerManager : MonoBehaviour
             try
             {
                 GameObject capacitorPrefab = Resources.Load<GameObject>($"Prefabs/Capacitors/C{capacitorValue}");
-                Instantiate(capacitorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(capacitorPrefab, componentSpawnPos.position, Quaternion.identity);
             }
             catch (System.Exception e)
             {
@@ -106,7 +107,7 @@ public class DrawerManager : MonoBehaviour
             try
             {
                 GameObject transformerPrefab = Resources.Load<GameObject>($"Prefabs/Transformers/XFRM{transformerValue}");
-                Instantiate(transformerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(transformerPrefab, componentSpawnPos.position, Quaternion.identity);
             }
             catch (System.Exception e)
             {
@@ -133,7 +134,7 @@ public class DrawerManager : MonoBehaviour
             try
             {
                 GameObject integratedCircuitPrefab = Resources.Load<GameObject>($"Prefabs/IntegratedCircuits/IC{integratedCircuitValue}");
-                Instantiate(integratedCircuitPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(integratedCircuitPrefab, componentSpawnPos.position, Quaternion.identity);
             }
             catch (System.Exception e)
             {

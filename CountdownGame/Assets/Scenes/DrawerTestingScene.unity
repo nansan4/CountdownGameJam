@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4590786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4590787}
+  m_Layer: 0
+  m_Name: ComponentSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4590787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.85, y: -3.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108461587
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,7 +5447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5123860495569333861, guid: 734336cc6f4d2e345a533b99b62f2d02, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166483429690822050, guid: 734336cc6f4d2e345a533b99b62f2d02, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6757,6 +6788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cf794b294524e1f975261d52c99fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  componentSpawnPos: {fileID: 4590787}
   resistorButton: {fileID: 1296675318}
   capacitorButton: {fileID: 1692068149}
   transformerButton: {fileID: 725933104}
@@ -7084,6 +7116,8 @@ MonoBehaviour:
   selectedButton: {fileID: 0}
   audioSource: {fileID: 2120912928}
   buttonClickSound: {fileID: 8300000, guid: 2d38e048d8b7448719477cda4f6867c1, type: 3}
+  showGlass: 1
+  dragGlassScript: {fileID: 1903386641}
 --- !u!82 &2120912928
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7653,6 +7687,7 @@ SceneRoots:
   - {fileID: 4300523211077358}
   - {fileID: 3678850318887124529}
   - {fileID: 512130265}
+  - {fileID: 4590787}
   - {fileID: 1262417788}
   - {fileID: 1887924908}
   - {fileID: 2105770734}

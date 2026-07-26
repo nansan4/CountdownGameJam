@@ -17,4 +17,16 @@ public class DragGlass : MonoBehaviour
     {
         dragging = false;
     }
+
+    public void Check(bool showGlass)
+    {
+        if (showGlass)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

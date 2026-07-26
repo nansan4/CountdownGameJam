@@ -8,6 +8,8 @@ public class ToolboxManager : MonoBehaviour
     [SerializeField] private Button selectedButton;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip buttonClickSound;
+    [SerializeField] private bool showGlass = false;
+    [SerializeField] private DragGlass dragGlassScript;
 
     #region Singleton
     public static ToolboxManager Instance { get; private set; }
@@ -71,6 +73,8 @@ public class ToolboxManager : MonoBehaviour
                 break;
             case "MagnifyingButton":
                 ToolManager.Instance.SetCurrentTool(CurrentTool.MagnifyingGlass);
+                showGlass = !showGlass; // Toggle the visibility of the glass
+                dragGlassScript.Check(showGlass);
                 break;
             case "DirectionalButton":
                 ToolManager.Instance.SetCurrentTool(CurrentTool.DirectionalInstrument);
